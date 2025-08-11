@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+</head>
+<body>
+    <h1>
+        Enter the details for updation:
+    </h1>
+    <a href="{{url_for('welcome')}}" class="btn" style="margin-top: 20px; margin-left: 20px; margin-right: 120px;"><b>Home page</b></a>
+
+    <div class="notice">
+        <h4>Note:</h4>
+        <ul>
+            <li>
+                Enter the actuall roll number to define the student record to be updated.
+            </li>
+            <li>
+                The Roll number should be correctly entered.
+            </li>
+            <li>
+                Enter rest of the items as the updated ones, keep the remaining same(if any).
+            </li>
+            <li>
+                Fill the Form below correctly:
+            </li>
+        </ul>
+    </div>
+    <form method="POST" id="Update_form">
+        <label for = "roll">Roll Num</label>
+        <input type="number" id = "roll" name="roll" placeholder="Enter your roll number">
+        <br>
+        <label for="student_name">Name</label>
+        <input type="text" id="student_name" name="student_name" placeholder="Enter your Name">
+        <br>
+        <label for="batch">Batch</label>
+        <input type= "number" name = batch id="batch" placeholder="Enter Current Batch">
+        <br>
+        <label for="dept">Department</label>
+        <input type="text" name="dept" id="dept" placeholder="Enter Current Department" >
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script src="{{url_for('static',filename='js/java_for_update.js')}}"></script>
+</body>
+</html>

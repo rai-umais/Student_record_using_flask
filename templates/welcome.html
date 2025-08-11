@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    
+</head>
+<body>
+    <h2> We welcome you, Mr.{{name}}, To our website. </h2>
+    <h3>
+        Here in this website, you have the access to: <br>
+        <strong>
+            -> Add Student<br>
+            -> Delete Student<br>
+            -> Update Student<br>
+        </strong>
+    </h3>
+    <p>
+        <a href="{{url_for('add_student')}}" class="btn" id="add_button"><u><b>ADD student</b></u></a><br><br>          <a href="{{url_for('delete_std')}}" class="btn" id="delete_button"><u><b>DELETE student</b></u></a><br> <br>
+        <a href="{{url_for('update_std')}}" class="btn" id="update_button"><u><b>UPDATE student</b></u></a><br><br>     <a href="{{url_for('print_students')}}" class="btn" id="print_button"><u><b>Print student rec</b></u></a>
+    </p>
+    </body>
+</html>

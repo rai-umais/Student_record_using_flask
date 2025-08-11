@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Existing Student Records</h2>
+    <a href="{{url_for('welcome')}}" class="btn" style="margin-top: 20px; margin-left: 20px; margin-right: 120px;"><b> Home page </b></a>
+
+    {% if students %}
+    <ul>
+        {% for student in students %}
+        <li>
+            Name: {{student.Name}} - Roll_no: {{student.Roll_num}} - Batch: {{student.Batch}} - Department: {{student.Department}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

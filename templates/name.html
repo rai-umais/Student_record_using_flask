@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{name}}'s website</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>Home Page</h1>
+    <form action = "{{url_for('welcome')}}" method="POST">
+        <label for="username">Name</label>
+        <input type="text" name="username" id="username" placeholder="how to call you.. ">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

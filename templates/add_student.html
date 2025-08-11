@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h2>
+        Enter the Student details please:
+    </h2>
+    <br>
+    <a href="{{url_for('welcome')}}" class="btn" style="margin-top: 20px; margin-left: 20px; margin-right: 120px;"><b> Home page </b></a>
+
+    <br>
+    <form method="post" id="Student_form">
+        <label for="username">Name</label>
+        <input type="text" name="username" id="username" placeholder="Your name here.."><br><br>
+        <label for="roll_number">Roll no.</label>
+        <input type="number" name="roll_number" id="roll_number" placeholder="Your roll-no. here.."><br><br>
+        <label for="batch">Batch</label>
+        <input type="number" name="batch" id="batch" placeholder="Your Batch here.."><br><br>
+        <label for="dept">Department</label>
+        <input type="text" name="dept" id="dept" placeholder="Your Dept. here.."><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script src="{{url_for('static',filename='js/java_for_add.js')}}"></script>
+</body>
+</html>
