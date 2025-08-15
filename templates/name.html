@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{name}}'s website</title>
+    <title>login page</title>
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 </head>
 <body>
     <h1>Home Page</h1>
-    <form action = "{{url_for('welcome')}}" method="POST">
-        <label for="username">Name</label>
-        <input type="text" name="username" id="username" placeholder="how to call you.. ">
-        <br><br>
+    
+    <form id="login_form" method="POST">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="your Login name.. " required>
+        <br>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Your Login Password.." required>
         <input type="submit" value="Submit">
     </form>
+    <br>
+    <a href="{{url_for('create_account')}}" style="margin-left: 500px;"><em><u>Create new account</u></em></a>
+    <script src="{{url_for('static',filename = 'js/java_for_login.js')}}"></script>
+
 </body>
-</html>
+</html> 

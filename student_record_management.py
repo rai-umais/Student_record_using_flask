@@ -1,10 +1,50 @@
 from flask import Flask,request,render_template,jsonify
 app = Flask(__name__)
 
+user_credentials={
+    'Name':None,
+    'Pass':None
+    }
 students={}
-@app.route('/')
+
+@app.route('/',methods=['GET','POST'])
 def name():
-   return render_template("name.html")
+   if request.method == 'GET':
+    return render_template("name.html")
+   
+   elif request.method == 'POST':
+    login_check = False
+    name=request.form.get('username')
+    password=request.form.get('password')
+    if name in user_credentials:
+        if user_credentials[name]['Pass'] == password:
+            login_check=True
+        else:
+            error="Incorrect password"
+            return jsonify({'success':False,'error':error})
+    else:
+        return jsonify({'success':False,'error':'No account with such credentials'})
+    if login_check:
+            return jsonify({'success':True,'redirect':'/welcome'})
+    
+@app.route('/registration',methods=['POST','GET'])
+def create_account():
+    if request.method == 'POST':
+        name=request.form.get('username')
+        cnic=request.form.get('CNIC')
+        password= request.form.get('new_pass')
+        user_credentials[name] = {}
+        user_credentials[name]['Pass'] = password
+        user_credentials[name]['Cnic'] = cnic
+        return jsonify({'message':'Account created sucessfully',
+                        'Admin':{
+                            'name':name,
+                            "cnic":cnic,
+                            'pass':password
+                            }})
+    else:
+        return render_template("account_creation.html")
+
 
 @app.route('/welcome',methods=['GET','POST'])
 def welcome():

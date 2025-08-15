@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h2>Welcome Mr. Admin; Enter credentials</h2>
+    <br><br>
+    <form id="registration_form" method='POST'>
+        <label for="username">Username / Email</label>
+        <input type="text" name="username" id="username" placeholder="Set you username or email">
+        <label for="CNIC">CNIC</label>
+        <input type="text" maxlength="13" placeholder="1234567891234" name="CNIC" id="CNIC">
+        <label for="new_pass">New Password</label>
+        <input type="password" name="new_pass" id="new_pass" placeholder="strong password">
+        <br><br>
+        <input type="submit" value="submit">
+    </form>
+    <a href="{{url_for('name')}}" style="margin-left: 500px;"><em><u>Back to login</u></em></a>
+    <script src="{{url_for('static',filename = 'js/java_for_registration.js')}}"></script>
+
+</body>
+</html>
